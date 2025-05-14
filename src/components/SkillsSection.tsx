@@ -1,4 +1,4 @@
-import { Code, Palette, Database, Cloud, Container, BrainCircuit, BookOpen, Binary, IterationCw, Puzzle, Users, MessageSquare, Filter, BriefcaseBusiness, Wrench, Server, Router, Component } from 'lucide-react';
+import { Code, Palette, Database, Cloud, Container, BrainCircuit, BookOpen, Binary, IterationCw, Puzzle, Users, MessageSquare, Filter, BriefcaseBusiness, Wrench, Server, Router, Component, Github } from 'lucide-react';
 import { usePortfolioData, SkillEntry, SkillsCategory } from '@/hooks/usePortfolioData';
 import { Badge } from "@/components/ui/badge";
 
@@ -21,7 +21,7 @@ const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
   React: BrainCircuit, // Placeholder for React, ideally a React logo icon (using BrainCircuit for now)
   Component: Component, // for Bootstrap
   // Keep existing generic ones if needed
-  Github: Github,
+  Github: Github, // Now correctly references the imported Github icon
   Server: Server,
   Wind: Palette, 
   Nextjs: Router,
