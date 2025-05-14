@@ -21,15 +21,16 @@ const LandingSection = () => {
     socialLinks.push({ href: `tel:${portfolioData.contact.phone}`, Icon: Phone, label: 'Phone' });
   }
 
-  // The parent <section> gets 'animate-fade-in-up' from IntersectionObserver.
-  // Child elements will have their own delays for a staggered effect.
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-secondary/30 dark:to-secondary/20 pt-16 overflow-hidden">
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-primary/10 dark:from-background dark:to-primary/20 pt-16 overflow-hidden"
+    >
       <div className="container text-center">
         <img
           src={portfolioData.profilePictureUrl}
           alt={portfolioData.name}
-          className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 shadow-xl border-4 border-primary/20 object-cover animate-fade-in-up transform transition-all duration-500 ease-out hover:scale-105 dark:shadow-primary/30"
+          className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-8 shadow-2xl dark:shadow-primary/50 border-4 border-primary object-cover animate-fade-in-up transform transition-all duration-300 ease-out hover:scale-110 hover:shadow-primary/40 dark:hover:shadow-primary/70 hover:ring-4 hover:ring-primary/60 dark:hover:ring-primary/60 ring-offset-background ring-offset-2"
           style={{ animationDelay: '0.2s' }}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
@@ -61,7 +62,7 @@ const LandingSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-primary/10 transform transition-all duration-300 ease-in-out hover:scale-110"
+              className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-primary/10 transform transition-all duration-300 ease-in-out hover:scale-125 active:scale-110 active:text-primary/80"
             >
               <link.Icon size={28} />
             </a>
@@ -74,7 +75,7 @@ const LandingSection = () => {
           <Button 
             asChild 
             size="lg" 
-            className="mr-4 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:-translate-y-0.5"
+            className="mr-4 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 active:translate-y-0 active:shadow-md"
           >
             <a href="#projects">View Projects</a>
           </Button>
@@ -82,7 +83,7 @@ const LandingSection = () => {
             asChild 
             size="lg" 
             variant="outline"
-            className="transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:-translate-y-0.5"
+            className="transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 active:translate-y-0 active:shadow-md"
           >
             <a href="#contact">Contact Me</a>
           </Button>
@@ -93,4 +94,3 @@ const LandingSection = () => {
 };
 
 export default LandingSection;
-
