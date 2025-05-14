@@ -1,0 +1,68 @@
+
+{
+  "name": "Your Name",
+  "profilePictureUrl": "https://via.placeholder.com/150",
+  "bio": "A passionate and creative individual exploring the world of web development. Eager to learn, build, and contribute to exciting projects.",
+  "contact": {
+    "email": "your.email@example.com",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "github": "https://github.com/yourusername",
+    "twitter": "https://twitter.com/yourusername"
+  },
+  "navbarLinks": [
+    { "label": "Home", "href": "#home" },
+    { "label": "Education", "href": "#education" },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science in Computer Science",
+      "institution": "University of Advanced Technology",
+      "year": "2022-2024",
+      "cgpa": "3.9/4.0"
+    },
+    {
+      "degree": "Bachelor of Engineering in Information Technology",
+      "institution": "Institute of Tech Excellence",
+      "year": "2018-2022",
+      "cgpa": "9.2/10"
+    }
+  ],
+  "skills": {
+    "languages": [
+      { "name": "JavaScript", "icon": "Code" },
+      { "name": "TypeScript", "icon": "Code" },
+      { "name": "Python", "icon": "Code" }
+    ],
+    "tools": [
+      { "name": "Git & GitHub", "icon": "Github" },
+      { "name": "Docker", "icon": "Container" },
+      { "name": "VS Code", "icon": "Terminal" }
+    ],
+    "technologies": [
+      { "name": "React", "icon": "React" },
+      { "name": "Node.js", "icon": "Server" },
+      { "name": "Tailwind CSS", "icon": "Wind" },
+      { "name": "Next.js", "icon": "Nextjs" }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Project Alpha",
+      "description": "A full-stack web application for managing tasks and productivity. Features user authentication, real-time collaboration, and a responsive design.",
+      "techStack": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      "githubLink": "https://github.com/yourusername/project-alpha",
+      "liveDemoLink": "https://project-alpha.example.com"
+    },
+    {
+      "title": "Portfolio Website V1",
+      "description": "My personal portfolio website built with React and Tailwind CSS, showcasing my skills and projects.",
+      "techStack": ["React", "Tailwind CSS", "TypeScript"],
+      "githubLink": "https://github.com/yourusername/portfolio-v1"
+    }
+  ],
+  "footerText": "© 2025 Your Name. All rights reserved."
+}
+
