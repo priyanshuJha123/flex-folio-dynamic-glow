@@ -1,68 +1,129 @@
 
 {
-  "name": "Your Name",
-  "profilePictureUrl": "https://via.placeholder.com/150",
-  "bio": "A passionate and creative individual exploring the world of web development. Eager to learn, build, and contribute to exciting projects.",
+  "name": "Priyanshu Jha",
+  "profilePictureUrl": "/profile.jpeg",
+  "bio": "Passionate Computer Science student driven by innovation and impact.",
   "contact": {
-    "email": "your.email@example.com",
-    "linkedin": "https://linkedin.com/in/yourprofile",
-    "github": "https://github.com/yourusername",
-    "twitter": "https://twitter.com/yourusername"
+    "email": "priyanshujha21165@gmail.com",
+    "phone": "+91-6202580977",
+    "linkedin": "https://linkedin.com/in/priyanshu-jha-102894227",
+    "github": "https://github.com/priyanshuJha123"
   },
   "navbarLinks": [
     { "label": "Home", "href": "#home" },
     { "label": "Education", "href": "#education" },
     { "label": "Skills", "href": "#skills" },
     { "label": "Projects", "href": "#projects" },
+    { "label": "Experience", "href": "#experience" },
     { "label": "Contact", "href": "#contact" }
   ],
   "education": [
     {
-      "degree": "Master of Science in Computer Science",
-      "institution": "University of Advanced Technology",
-      "year": "2022-2024",
-      "cgpa": "3.9/4.0"
+      "degree": "B.Tech, Computer Science",
+      "institution": "Amrita Vishwa Vidyapeetham",
+      "year": "Aug 2025",
+      "cgpa": "7.55/10"
     },
     {
-      "degree": "Bachelor of Engineering in Information Technology",
-      "institution": "Institute of Tech Excellence",
-      "year": "2018-2022",
-      "cgpa": "9.2/10"
+      "degree": "Senior Secondary",
+      "institution": "United Academy",
+      "year": "March 2020",
+      "cgpa": "3.40/4.00"
+    },
+    {
+      "degree": "Secondary",
+      "institution": "Simara Public English School",
+      "year": "March 2018",
+      "cgpa": "3.50/4.00"
     }
   ],
   "skills": {
-    "languages": [
+    "programmingLanguages": [
+      { "name": "Java", "icon": "Code" },
+      { "name": "Python", "icon": "Code" },
+      { "name": "C++", "icon": "Code" }
+    ],
+    "webTechnologies": [
+      { "name": "HTML", "icon": "Code" },
+      { "name": "CSS", "icon": "Palette" },
       { "name": "JavaScript", "icon": "Code" },
-      { "name": "TypeScript", "icon": "Code" },
-      { "name": "Python", "icon": "Code" }
-    ],
-    "tools": [
-      { "name": "Git & GitHub", "icon": "Github" },
-      { "name": "Docker", "icon": "Container" },
-      { "name": "VS Code", "icon": "Terminal" }
-    ],
-    "technologies": [
       { "name": "React", "icon": "React" },
-      { "name": "Node.js", "icon": "Server" },
-      { "name": "Tailwind CSS", "icon": "Wind" },
-      { "name": "Next.js", "icon": "Nextjs" }
+      { "name": "Bootstrap", "icon": "Component" },
+      { "name": "MySQL", "icon": "Database" }
+    ],
+    "cloudAndFrameworks": [
+      { "name": "AWS", "icon": "Cloud" },
+      { "name": "Docker", "icon": "Container" },
+      { "name": "TensorFlow", "icon": "BrainCircuit" },
+      { "name": "PyTorch", "icon": "BrainCircuit" }
+    ],
+    "softwareEngineering": [
+      { "name": "OOP", "icon": "BookOpen" },
+      { "name": "Data Structures", "icon": "Binary" },
+      { "name": "Algorithms", "icon": "IterationCw" }
+    ],
+    "softSkills": [
+      { "name": "Problem-Solving", "icon": "Puzzle" },
+      { "name": "Teamwork", "icon": "Users" },
+      { "name": "Communication", "icon": "MessageSquare" },
+      { "name": "Analytical Thinking", "icon": "Filter" }
     ]
   },
   "projects": [
     {
-      "title": "Project Alpha",
-      "description": "A full-stack web application for managing tasks and productivity. Features user authentication, real-time collaboration, and a responsive design.",
-      "techStack": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      "githubLink": "https://github.com/yourusername/project-alpha",
-      "liveDemoLink": "https://project-alpha.example.com"
+      "title": "Twitter Sentiment Analysis Using Kafka",
+      "description": "Real-time sentiment analysis pipeline using Kafka, Spark Streaming, NLP, MongoDB, and Django dashboard.",
+      "techStack": ["Apache Kafka", "Apache Spark", "MongoDB", "Django", "NLP"],
+      "githubLink": "https://github.com/priyanshuJha123/TwitterSentimentAnalysis"
     },
     {
-      "title": "Portfolio Website V1",
-      "description": "My personal portfolio website built with React and Tailwind CSS, showcasing my skills and projects.",
-      "techStack": ["React", "Tailwind CSS", "TypeScript"],
-      "githubLink": "https://github.com/yourusername/portfolio-v1"
+      "title": "LangChain Chatbot for Document Retrieval",
+      "description": "Chatbot using LangChain, SentenceTransformer, Pinecone, and RAG-based semantic search.",
+      "techStack": ["LangChain", "Pinecone", "Sentence Transformers", "RAG", "Python"],
+      "githubLink": "https://github.com/priyanshuJha123/Langchain-Chatbot"
+    },
+    {
+      "title": "Advancing Microservices Architecture with Docker",
+      "description": "Microservices-based blog site using Docker and React, presented at IEEE ICCCNT 2024.",
+      "techStack": ["React", "Docker", "Bootstrap", "CSS", "Kubernetes", "AWS"],
+      "githubLink": "https://github.com/priyanshuJha123/Microservices-Blog"
+    },
+    {
+      "title": "Adaptive Strategies for VANET",
+      "description": "Dynamic VANET routing strategies using NS3, MATLAB, and SUMO; IEEE ICICT 2024.",
+      "techStack": ["NS3", "MATLAB", "VANET", "SUMO", "Routing Protocols"],
+      "githubLink": "https://github.com/priyanshuJha123/VANET-Adaptive-Routing"
+    },
+    {
+      "title": "Facial Detection using Deep Learning and Explainable AI",
+      "description": "CNN-based facial detection with LIME for interpretability; 98% accuracy.",
+      "techStack": ["CNN", "MTCNN", "LIME", "Deep Learning", "Computer Vision"],
+      "githubLink": "https://github.com/priyanshuJha123/Facial-Detection-XAI"
+    },
+    {
+      "title": "Weather Integrated Food Recommendation System",
+      "description": "Weather-driven food recommendation system using predictive analytics and RNNs.",
+      "techStack": ["RNN", "Predictive Analytics", "ML", "Data Visualization"],
+      "githubLink": "https://github.com/priyanshuJha123/FoodRecommender"
+    },
+    {
+      "title": "Movie Ticket Booking Site",
+      "description": "Geo-aware movie ticket booking site using React and MySQL.",
+      "techStack": ["React", "JavaScript", "MySQL", "API", "HTML", "CSS"],
+      "githubLink": "https://github.com/priyanshuJha123/MovieTicketBooking"
     }
   ],
-  "footerText": "© 2025 Your Name. All rights reserved."
+  "experience": [
+    {
+      "role": "Frontend Intern",
+      "company": "Secret AI",
+      "duration": "June 2024 – Sept 2024",
+      "responsibilities": [
+        "Built responsive React components.",
+        "Optimized CSS/JS loading by 20%.",
+        "Enhanced cross-browser compatibility."
+      ]
+    }
+  ],
+  "footerText": "© 2025 Priyanshu Jha. All rights reserved."
 }
-

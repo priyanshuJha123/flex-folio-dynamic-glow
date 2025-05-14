@@ -3,6 +3,9 @@ import Navbar from "@/components/Navbar";
 import LandingSection from "@/components/LandingSection";
 import EducationSection from "@/components/EducationSection";
 import SkillsSection from "@/components/SkillsSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { useEffect, useRef } from "react";
 
@@ -11,11 +14,14 @@ const useIntersectionObserver = (options: IntersectionObserverInit) => {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    // Ensure this runs only client-side
+    if (typeof window === 'undefined') return;
+
     observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observerRef.current?.unobserve(entry.target); // Optional: unobserve after animation
+          observerRef.current?.unobserve(entry.target);
         }
       });
     }, options);
@@ -24,7 +30,11 @@ const useIntersectionObserver = (options: IntersectionObserverInit) => {
     sections.forEach(section => observerRef.current?.observe(section));
 
     return () => {
-      sections.forEach(section => observerRef.current?.unobserve(section));
+      sections.forEach(section => {
+        if (observerRef.current) { // Check if observerRef.current is not null
+           observerRef.current.unobserve(section)
+        }
+      });
     };
   }, [options]);
 };
@@ -40,7 +50,9 @@ const Index = () => {
         <LandingSection />
         <EducationSection />
         <SkillsSection />
-        {/* Projects and Contact sections will be added here later */}
+        <ProjectsSection />
+        <ExperienceSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>
@@ -48,4 +60,3 @@ const Index = () => {
 };
 
 export default Index;
-

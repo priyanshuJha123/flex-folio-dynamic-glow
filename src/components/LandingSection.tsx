@@ -1,22 +1,27 @@
 
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { usePortfolioData } from '@/hooks/usePortfolioData';
 import { Button } from '@/components/ui/button';
-import { useTheme } from 'next-themes';
+// Removed useTheme as it's not used here
 
 const LandingSection = () => {
   const { data: portfolioData, isLoading, error } = usePortfolioData();
-  const { theme } = useTheme();
 
   if (isLoading) return <section id="home" className="min-h-screen flex items-center justify-center"><p>Loading...</p></section>;
-  if (error || !portfolioData) return <section id="home" className="min-h-screen flex items-center justify-center"><p>Error loading data.</p></section>;
+  if (error || !portfolioData) {
+    console.error("LandingSection Error:", error);
+    return <section id="home" className="min-h-screen flex items-center justify-center"><p>Error loading data. Check console for details.</p></section>;
+  }
   
   const socialLinks = [
     { href: portfolioData.contact.github, Icon: Github, label: 'GitHub' },
     { href: portfolioData.contact.linkedin, Icon: Linkedin, label: 'LinkedIn' },
-    { href: portfolioData.contact.twitter, Icon: Twitter, label: 'Twitter' },
     { href: `mailto:${portfolioData.contact.email}`, Icon: Mail, label: 'Email' },
   ];
+  if (portfolioData.contact.phone) {
+    socialLinks.push({ href: `tel:${portfolioData.contact.phone}`, Icon: Phone, label: 'Phone' });
+  }
+
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-secondary/30 dark:to-secondary/20 pt-16">
@@ -24,7 +29,13 @@ const LandingSection = () => {
         <img
           src={portfolioData.profilePictureUrl}
           alt={portfolioData.name}
-          className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 shadow-lg border-4 border-primary/20"
+          className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 shadow-lg border-4 border-primary/20 object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null; // Prevent infinite loop if placeholder also fails
+            target.src = 'https://via.placeholder.com/150'; // Fallback placeholder
+            console.warn(`Profile image not found at ${portfolioData.profilePictureUrl}, using placeholder. Please upload your image to public/profile.jpeg`);
+          }}
         />
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
           Hi, I'm <span className="text-primary">{portfolioData.name}</span>
@@ -60,4 +71,3 @@ const LandingSection = () => {
 };
 
 export default LandingSection;
-
