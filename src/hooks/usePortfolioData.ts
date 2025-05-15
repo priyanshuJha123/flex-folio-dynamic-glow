@@ -1,5 +1,7 @@
 
 import { useQuery } from '@tanstack/react-query';
+// Directly import the JSON data. Vite will handle this.
+import portfolioContent from '/portfolioData.json'; 
 
 export interface EducationEntry {
   degree: string;
@@ -46,7 +48,7 @@ export interface PortfolioContact {
   phone?: string;
   linkedin: string;
   github: string;
-  twitter?: string; // Kept optional if not used
+  twitter?: string;
 }
 
 export interface PortfolioData {
@@ -62,25 +64,20 @@ export interface PortfolioData {
   footerText: string;
 }
 
-const fetchPortfolioData = async (): Promise<PortfolioData> => {
-  const response = await fetch('/portfolioData.json');
-  if (!response.ok) {
-    console.error('Failed to fetch portfolio data:', response);
-    throw new Error('Network response was not ok');
-  }
-  try {
-    const data = await response.json();
-    console.log('Fetched portfolio data:', data);
-    return data;
-  } catch (e) {
-    console.error('Failed to parse portfolio data:', e);
-    throw new Error('Failed to parse JSON');
-  }
+// The data is now imported, so the query function can just resolve with it.
+const getPortfolioData = async (): Promise<PortfolioData> => {
+  // Simulate async behavior if needed by useQuery, or simply return the data.
+  // For simplicity and since data is now static, we can directly use it.
+  // console.log('Using imported portfolio data:', portfolioContent);
+  return Promise.resolve(portfolioContent as PortfolioData);
 };
 
 export const usePortfolioData = () => {
   return useQuery<PortfolioData, Error>({
     queryKey: ['portfolioData'],
-    queryFn: fetchPortfolioData,
+    queryFn: getPortfolioData,
+    // Since the data is bundled, it's stale time can be infinite.
+    staleTime: Infinity, 
   });
 };
+
