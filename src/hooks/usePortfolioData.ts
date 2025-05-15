@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-// Directly import the JSON data. Vite will handle this.
-import portfolioContent from '/portfolioData.json'; 
 
+// Define interfaces (EducationEntry, SkillEntry, etc.)
 export interface EducationEntry {
   degree: string;
   institution: string;
@@ -63,19 +62,21 @@ export interface PortfolioData {
   footerText: string;
 }
 
-// The data is now imported, so the query function can just resolve with it.
+// Function to fetch the portfolio data
 const getPortfolioData = async (): Promise<PortfolioData> => {
-  // Simulate async behavior if needed by useQuery, or simply return the data.
-  // For simplicity and since data is now static, we can directly use it.
-  // console.log('Using imported portfolio data:', portfolioContent);
-  return Promise.resolve(portfolioContent as PortfolioData);
+  const response = await fetch('/portfolioData.json'); // Fetch from the public directory
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  const data = await response.json();
+  // console.log('Fetched portfolio data:', data);
+  return data as PortfolioData; // Cast to PortfolioData
 };
 
 export const usePortfolioData = () => {
   return useQuery<PortfolioData, Error>({
     queryKey: ['portfolioData'],
     queryFn: getPortfolioData,
-    // Since the data is bundled, it's stale time can be infinite.
-    staleTime: Infinity, 
+    staleTime: Infinity, // Data is static, so can be considered fresh indefinitely
   });
 };
