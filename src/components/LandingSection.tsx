@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { usePortfolioData } from '@/hooks/usePortfolioData';
 import { Button } from '@/components/ui/button';
@@ -52,10 +51,7 @@ const LandingSection = () => {
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 animate-fade-in-up bg-gradient-to-r from-primary via-blue-500 to-purple-600 dark:from-blue-400 dark:via-primary dark:to-purple-400 bg-clip-text text-transparent"
           style={{ animationDelay: '0.4s' }}
         >
-          Hi, I'm <span className="relative inline-block">
-            {portfolioData.name}
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-blue-500 to-purple-600 transform scale-x-100"></span>
-          </span>
+          Hi, I'm {portfolioData.name}
         </h1>
         
         <p 
