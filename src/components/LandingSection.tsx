@@ -1,3 +1,4 @@
+
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { usePortfolioData } from '@/hooks/usePortfolioData';
 import { Button } from '@/components/ui/button';
@@ -20,6 +21,9 @@ const LandingSection = () => {
     socialLinks.push({ href: `tel:${portfolioData.contact.phone}`, Icon: Phone, label: 'Phone' });
   }
 
+  // Ensure profile picture URL is correctly formatted for production
+  const profilePictureSrc = portfolioData.profilePictureUrl || 'https://via.placeholder.com/150';
+
   return (
     <section 
       id="home" 
@@ -34,7 +38,7 @@ const LandingSection = () => {
         <div className="relative inline-block mb-8">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-blue-500/30 to-purple-500/40 rounded-full blur-md transform -rotate-6 scale-105"></div>
           <img
-            src={portfolioData.profilePictureUrl}
+            src={profilePictureSrc}
             alt={portfolioData.name}
             className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto relative z-10 shadow-2xl dark:shadow-primary/50 border-4 border-white dark:border-primary/70 object-cover animate-fade-in-up transform transition-all duration-300 ease-out hover:scale-110 hover:shadow-primary/40 dark:hover:shadow-primary/70 hover:ring-4 hover:ring-primary/60 dark:hover:ring-primary/60 ring-offset-background ring-offset-2"
             style={{ animationDelay: '0.2s' }}
@@ -42,7 +46,7 @@ const LandingSection = () => {
               const target = e.target as HTMLImageElement;
               target.onerror = null; // Prevent infinite loop
               target.src = 'https://via.placeholder.com/150'; 
-              console.warn(`Profile image not found at ${portfolioData.profilePictureUrl}, using placeholder. Please upload your image to public/profile.jpeg`);
+              console.warn(`Profile image not found at ${profilePictureSrc}, using placeholder.`);
             }}
           />
         </div>
