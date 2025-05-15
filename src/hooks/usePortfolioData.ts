@@ -1,4 +1,3 @@
-
 import { useQuery } from '@tanstack/react-query';
 // Directly import the JSON data. Vite will handle this.
 import portfolioContent from '/portfolioData.json'; 
@@ -80,4 +79,3 @@ export const usePortfolioData = () => {
     staleTime: Infinity, 
   });
 };
-
